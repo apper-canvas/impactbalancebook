@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// This file is no longer the main entry point
+// Router configuration moved to src/router/index.jsx
+// App-level functionality can be added here if needed in the future
 import { ToastContainer } from "react-toastify";
 import Layout from "@/components/organisms/Layout";
 import Dashboard from "@/components/pages/Dashboard";
@@ -7,32 +9,9 @@ import Budgets from "@/components/pages/Budgets";
 import Goals from "@/components/pages/Goals";
 import Charts from "@/components/pages/Charts";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/transactions" element={<Transactions />} />
-          <Route path="/budgets" element={<Budgets />} />
-          <Route path="/goals" element={<Goals />} />
-          <Route path="/charts" element={<Charts />} />
-        </Routes>
-      </Layout>
-      
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-    </BrowserRouter>
-  );
+// App component no longer needed as entry point
+// Router configuration handled by RouterProvider in main.jsx
+// Layout component now handles the main application structure
+export default function App() {
+  return null;
 }
-
-export default App;
