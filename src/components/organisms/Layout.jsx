@@ -1,4 +1,5 @@
 import { Outlet, useOutletContext } from "react-router-dom";
+import { useAuth } from "@/layouts/Root";
 import { ToastContainer } from "react-toastify";
 import React from "react";
 import Sidebar from "@/components/organisms/Sidebar";
@@ -7,11 +8,13 @@ import MobileNav from "@/components/organisms/MobileNav";
 const Layout = () => {
   // App-level state and methods can be defined here
   // and passed to child routes via outletContext
+const { logout } = useAuth();
+
   const contextValue = {
+    logout,
     // Add any app-level state or methods here
     // Example: user, theme, notifications, etc.
   };
-  
   return (
     <>
       <div className="min-h-screen bg-gray-50">
